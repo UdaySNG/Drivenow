@@ -1,0 +1,95 @@
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    height: 90vh;
+  
+    &__image {
+      width: 0;
+      max-width: 100%;
+      border-radius: 8px;
+      margin-left: 20px;
+      animation: slideInImage 0.5s ease-in-out forwards; // Initiële animatie bij opstart
+    }
+  
+    &.loaded &__image {
+      animation: slideInImageLoaded 0.5s ease-in-out forwards; // Extra animatie wanneer geladen
+    }
+  
+    @keyframes slideInImage {
+      to {
+        width: 500px;
+        margin-left: 0;
+      }
+    }
+  
+    @keyframes slideInImageLoaded {
+      to {
+        width: 500px;
+        margin-left: 0;
+      }
+    }
+  
+    &__content {
+      max-width: 600px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+  
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    &__title,
+    &__description,
+    &__button {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  
+    &.loaded &__title.visible,
+    &.loaded &__description.visible,
+    &.loaded &__button.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    &__description {
+      font-size: 1.2rem;
+      color: #666;
+    }
+  
+    &__button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 12px 24px;
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: #ff7a7f;
+        transform: scale(1.1);
+        
+
+      }
+    }
+  }
+  

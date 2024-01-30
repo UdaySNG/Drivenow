@@ -1,0 +1,50 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 90vh;
+    font-size: 1.7rem;
+    &__content {
+       
+      width: 60rem;
+     
+  
+      &__title {
+   
+        margin-bottom: 20px;
+        color: #fff;
+      }
+  
+      &__description {
+        font-size: 3rem;
+        color: #ccc;
+        line-height: 1.5;
+      }
+    }
+  
+    &__image-container {
+      position: relative;
+      width: 30%;
+      margin-left: 20px;
+  
+      .about__image {
+        border-radius: 8px;
+        width: 28rem;
+        height: auto;
+        max-width: 100%;
+        position: absolute;
+        bottom: 1%;
+        transform: rotate(-5deg);
+        z-index: 1;
+  
+        &.bottom {
+          top: 40px;
+          transform: rotate(5deg);
+        }
+  
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  

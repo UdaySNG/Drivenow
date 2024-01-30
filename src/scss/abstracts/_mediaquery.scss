@@ -1,0 +1,88 @@
+
+
+  @media screen and (max-width: 62.5rem) {
+  .about{
+    flex-direction: column;
+    height: 100vh;
+    .about__content {
+      height: 100%;
+      width: 100%;
+    }
+
+    .about__description{
+    
+      width: 100%;
+    }
+
+    .about__image-container{
+      height: auto;
+    }
+
+    &__image-container {
+      width: 100%;
+      margin-left: 0;
+
+      .about__image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        position: relative;
+        bottom: 0;
+        transform: rotate(0deg);
+        z-index: 0;
+
+        &.bottom {
+          top: 0;
+          transform: rotate(0deg);
+        }
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  }
+
+@media screen and (max-width: 62.5rem) {
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .intro__image {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 62.5rem) {
+  .showroom {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .showroom .car-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .car-card {
+    min-width: calc(100% - 40px);
+    min-height: 40rem;
+  }
+
+  .car-image {
+    height: 40%;
+  }
+
+  .car-info {
+    padding-top: 2rem;
+  }
+
+
+}
