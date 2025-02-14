@@ -1,50 +1,61 @@
 .about {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  &__content {
+    flex: 1;
+    margin-bottom: 20px; // Add margin at the bottom for better separation
+  }
+
+  &__image-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    height: 90vh;
-    font-size: 1.7rem;
+    justify-content: center; // Center the image horizontally
+    align-items: center; // Center the image vertically
+    margin-top: 20px; // Add margin for better spacing
+  }
+
+  &__image {
+    width: 60%; // Adjust width as needed for normal mode
+    border-radius: 10px;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 10px; // Reduce margin for better alignment with description
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 62.5rem) {
+    // Adjust breakpoint as needed
+    flex-direction: row;
+
     &__content {
-       
-      width: 60rem;
-     
-  
-      &__title {
-   
-        margin-bottom: 20px;
-        color: #fff;
-      }
-  
-      &__description {
-        font-size: 3rem;
-        color: #ccc;
-        line-height: 1.5;
-      }
+      flex: 1;
+      margin-right: 20px; // Add margin between content and image
     }
-  
+
     &__image-container {
-      position: relative;
-      width: 30%;
-      margin-left: 20px;
-  
-      .about__image {
-        border-radius: 8px;
-        width: 28rem;
-        height: auto;
-        max-width: 100%;
-        position: absolute;
-        bottom: 1%;
-        transform: rotate(-5deg);
-        z-index: 1;
-  
-        &.bottom {
-          top: 40px;
-          transform: rotate(5deg);
-        }
-  
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+      margin-top: 0; // Reset margin top
+      margin-left: auto; // Move image to the right
+      margin-right: 20px; // Add margin between content and image
+    }
+
+    &__image {
+      width: 80%; // Adjust width as needed for responsive mode
+    }
+
+    &__title {
+      font-size: 2.8rem; // Increase font size for larger screens
+    }
+
+    &__description {
+      font-size: 1.4rem; // Increase font size for larger screens
     }
   }
-  
+}
