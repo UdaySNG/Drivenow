@@ -1,5 +1,4 @@
 .main-header {
-  position: sticky;
   background-color: #282c35;
   color: #61dafb;
   padding: 1.5rem;
@@ -16,9 +15,48 @@
   &__title {
     font-size: 48px;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #ff5a5f;
     flex-grow: 1;
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ff5a5f;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__toggle-icon {
+    display: block;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+      width: 100%;
+
+      background-color: #282c35;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+      &.main-header__nav--open {
+        display: flex;
+
+        .main-header__button {
+          display: block;
+        }
+      }
+    }
   }
 
   &__button {
@@ -43,42 +81,20 @@
     }
   }
 
-  &__nav {
-    display: flex;
-    gap: 30px;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  &__button--hamburger {
-    display: none;
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #ff7a7f;
-    }
-
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
-  }
-
   &__nav--open {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 80px;
     right: 0;
     background-color: #282c35;
-    width: 100%;
+    width: 100%; /* Behoud de volledige breedte van de hoofdkoptekst */
+    max-width: 100%; /* Hier wordt de maximale breedte ingesteld */
+    padding: 20px; /* Voeg padding toe om de inhoud te centreren */
+    box-sizing: border-box; /* Zorg ervoor dat padding binnen de maximale breedte wordt berekend */
+    overflow-x: auto; /* Voeg horizontaal scrollen toe indien nodig */
   }
 
   &__nav-item {
@@ -97,20 +113,15 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
-      background-color: #ff7a7f;
       transform: scale(1.05);
     }
   }
 
   &__nav-button--company {
-    background-color: #009688;
+    background-color: #ff5a5f;
   }
 
   &__nav-button--services {
-    background-color: #673ab7;
-  }
-
-  &__button--open {
-    color: #ff7a7f;
+    background-color: #ff5a5f;
   }
 }

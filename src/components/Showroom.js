@@ -1,5 +1,6 @@
-// Importeer React en de stylesheet
+// Importeer React en de benodigde Hooks
 import React from "react";
+import { Link } from "react-router-dom"; // Importeer Link van react-router-dom
 import "../scss/components/showroom.scss";
 
 // Showroom component
@@ -40,9 +41,10 @@ const Showroom = () => {
               <h3>{car.name}</h3>
               <p>Bouwjaar: {car.year}</p>
               <p>Kilometerstand: {car.mileage} km</p>
-              <a href={`/model/${car.id}`} className="view-details-button">
+              {/* Link naar de detailpagina van de auto */}
+              <Link to={`/model/${car.id}`} className="view-details-button">
                 Bekijk Details
-              </a>
+              </Link>
             </div>
           </div>
         ))}

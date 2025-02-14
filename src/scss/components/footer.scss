@@ -5,9 +5,11 @@
     color: #fff;
     padding: 40px 20px;
     text-align: center;
-   width: 100%;
+    flex-wrap: wrap;
+  //  width: 100%;
     .footer-content {
       display: flex;
+      
       justify-content: space-around;
     }
   
@@ -40,4 +42,15 @@
       font-size: 0.8rem;
     }
   }
-  
+
+  @media screen and (max-width: 62.5rem) {
+    .footer {
+   
+      .footer-content {  
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+      }
+  }
+}
